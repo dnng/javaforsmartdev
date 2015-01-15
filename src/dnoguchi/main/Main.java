@@ -1,4 +1,6 @@
-package dnoguchi.cointoss;
+package dnoguchi.main;
+
+import dnoguchi.cointoss.Coin;
 
 public class Main {
 
