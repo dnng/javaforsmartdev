@@ -1,21 +1,20 @@
 package dnoguchi.parkingticket;
 
-import java.sql.Time;
-
 /**
  * Created by dnoguchi on 1/15/15.
  */
 public class ParkingMeter {
-    private int purchasedTime;
+    private long purchasedTime;
 
-    public ParkingMeter() {
-    }
-
-    public void setPurchasedTime(int purchasedTime) {
+    public ParkingMeter(long purchasedTime) {
         this.purchasedTime = purchasedTime;
     }
 
-    public int getPurchasedTime() {
+    public void setPurchasedTime(long purchasedTime) {
+        this.purchasedTime = purchasedTime;
+    }
+
+    public long getPurchasedTime() {
         return purchasedTime;
     }
 }
