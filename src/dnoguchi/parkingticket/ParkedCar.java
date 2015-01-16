@@ -14,9 +14,13 @@ public class ParkedCar {
     private Date dateCreated;
     private ParkingMeter purchasedTime;
 
-    public ParkedCar() {
+    public ParkedCar(String make, String model, String color, String licenseNumber, int timeToPurchase) {
         dateCreated = new Date(); // sets to current date/time
-        purchasedTime = new ParkingMeter();
+        purchasedTime = new ParkingMeter(timeToPurchase);
+        this.make = make;
+        this.model = model;
+        this.color = color;
+        this.licenseNumber = licenseNumber;
     }
 
     public String getMake() {
@@ -64,8 +68,8 @@ public class ParkedCar {
         purchasedTime.setPurchasedTime(timeToBePurchased);
     }
 
-    public void getPurchasedTime() {
-        purchasedTime.getPurchasedTime();
+    public long getPurchasedTime() {
+        return purchasedTime.getPurchasedTime();
     }
 
 }
