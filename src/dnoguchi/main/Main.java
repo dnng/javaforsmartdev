@@ -2,7 +2,6 @@ package dnoguchi.main;
 
 import dnoguchi.cointoss.Coin;
 import dnoguchi.parkingticket.ParkedCar;
-import dnoguchi.parkingticket.ParkingMeter;
 import dnoguchi.parkingticket.PoliceOfficer;
 
 import java.util.Arrays;
