@@ -18,7 +18,7 @@ public class ParkingTicket {
         return 25 + (int)(10 * (car.getTimeParked() / 60));
     }
 
-    public String reportPoliceOfficer(PoliceOfficer policeOfficer) {
-        return "Police Officer info: " + policeOfficer.getName() + " , " + policeOfficer.getBadgeNumber();
+    public String reportPoliceOfficer(String name, int badgeNumber) {
+        return "Police Officer info: " + name + " , " + badgeNumber;
     }
 }
