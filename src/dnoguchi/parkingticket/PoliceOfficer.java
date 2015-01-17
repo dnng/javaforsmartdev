@@ -9,17 +9,17 @@ public class PoliceOfficer {
         this.badgeNumber = badgeNumber;
     }
 
-    public void examineParking(ParkedCar car, PoliceOfficer officer) {
+    public void examineParking(ParkedCar car) {
         if (car.getTimeParked() > car.getPurchasedTime()) {
-            issueTicket(car, officer);
+            issueTicket(car);
         }
     }
 
-    public void issueTicket(ParkedCar car, PoliceOfficer officer) {
+    public void issueTicket(ParkedCar car) {
         ParkingTicket ticket = new ParkingTicket();
         ticket.reportParkedCar(car);
         ticket.reportFine(car);
-        ticket.reportPoliceOfficer(officer);
+        ticket.reportPoliceOfficer(this.name, this.badgeNumber);
     }
 
     public String getName() {
