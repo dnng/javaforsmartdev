@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1 id="part-b---parking-ticket-simulator">Part b - Parking Ticket Simulator</h1>
+    <p>Create a set of classes simulating a police officer issuing a parking ticket.</p>
+    <ul>
+        <li><p>Class - ParkedCar has the following responsibilities:</p>
+            <blockquote>
+                <ul>
+                    <li>To know the car's make, model, color, license number and number of minutes the car has been parked.</li>
+                </ul>
+            </blockquote></lip>Class - ParkingTicket has the following responsibilities:</p>
+            <blockquote>
+                <ul>
+                    <li>To report the make, model, color and license number of an illegally parked car.</li>
+                    <li>Report the fine - which is $25.00 for first hour plus $10.00 for each additional hour</li>
+                    <li>Report the name and badge number of the police officer issuing the ticket.</li>
+                </ul>
+            </blockquote></li>
+        <li><p>Class - PoliceOfficer has the following responsibilities:</p>
+            <blockquote>
+                <ul>
+                    <li>To know the name and badge number</li>
+                    <li>To examine a parked car and parking meter object and determine whether the car's time has expired.</li>
+                    <li>To issue a parking ticket if the car time has expired.</li>
+                </ul>
+            </blockquote></li>
+    </ul>
+
+    <h1 id="parking-ticket-simulator">Parking Ticket Simulator</h1>
+    <h2 id="learning-objectives">Learning objectives</h2>
+    <ol style="list-style-type: decimal">
+        <li>Analyze requirements, design, code and test Java programs</li>
+    </ol>
+    <h2 id="understanding-requirements">Understanding requirements</h2>
+    <p>Design to simulate a system where a police officer issues a parking ticket.</p>
+    <p>You should design a set of classes that work together as a Parking Simulator.</p>
+    <h2 id="designing">Designing</h2>
+    <p>Similar to the approach followed in the previous task, let’s decide what classes, methods and fields should be required.</p>
+    <p>Since the PoliceOfficer will make the decision on whether to issue ticket, issueTicket method belongs to PoliceOfficer. ParkedCar, ParkedTicket and ParkedMeter are independent entities described below.</p>
+    <dl>
+        <dt>ParkedCar Class has the following responsibilities:</dt>
+        <dd><ul>
+            <li>To know the car's make, model, color, license number and number of minutes the car has been parked. Create getter and setter methods for all the fields.</li>
+        </ul>
+        </dd>
+        <dt>ParkingMeter Class only responsibility is as follows:</dt>
+        <dd><ul>
+            <li>To know the number of minutes of parking time that has been purchased.</li>
+        </ul>
+        </dd>
+        <dt>ParkingTicket Class has the following responsibilities:</dt>
+        <dd><ul>
+            <li>Report the make, model, color and license number of an illegally parked car.</li>
+            <li>Report the fine - which is $25.00 for first hour plus $10.00 for each additional hour</li>
+            <li>Report the name and badge number of the police officer issuing the ticket.</li>
+        </ul>
+        </dd>
+        <dt>PoliceOfficer Class has the following responsibilities:</dt>
+        <dd><ul>
+            <li>To know the name and badge number</li>
+            <li>To examine a parked car and parking meter object and determine whether the car's time has expired.</li>
+            <li><dl>
+                <dt>To issue a parking ticket if the car time has expired.rite the test classes including testing situations:</dt>
+                <dd><ul>
+                    <li>ParkedVehicle is with in, out of and just in the parking time purchased.</li>
+                    <li>Ticketing under 1 hour and more than 1 hour test cases.</li>
+                </ul>
+                </dd>
+            </dl></li>
+        </ul>
+        </dd>
+    </dl>
+    <h2 id="topics-to-learn">Topics to Learn</h2>
+    <ol style="list-style-type: decimal">
+        <li>Object Oriented Programming</li>
+        <li>Association in design</li>
+        <li>Class diagram</li>
+    </ol>
+</body>
+</html>
