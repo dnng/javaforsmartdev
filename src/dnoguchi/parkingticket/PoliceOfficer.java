@@ -14,8 +14,8 @@ public class PoliceOfficer {
             issueTicket(car);
         } else {
             System.out.println("Car " + car.getMake() + " " + car.getModel() +
-                    "still has " + (car.getPurchasedTime() -
-                    car.getTimeParked()) + "minutes left.");
+                    " still has " + (car.getPurchasedTime() -
+                    car.getTimeParked()) + " minutes left.");
 
         }
     }
