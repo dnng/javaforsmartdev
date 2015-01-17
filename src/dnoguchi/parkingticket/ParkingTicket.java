@@ -10,8 +10,13 @@ public class ParkingTicket {
     public ParkingTicket() {
     }
 
-    public ParkedCar reportParkedCar(ParkedCar car) {
-        return car;
+    public String reportParkedCar(ParkedCar car) {
+        return "\tCar info:\n\t\tmodel: " + car.getModel() +
+            "\n\t\tmake: " + car.getMake() +
+            "\n\t\tcolor: " + car.getColor() +
+            "\n\t\tlicense plate: " + car.getLicenseNumber() +
+            "\n\t\tpurchased time: " + car.getPurchasedTime() +
+            "\n\t\ttime parked " + car.getTimeParked();
     }
 
     public int reportFine(ParkedCar car) {
@@ -19,6 +24,6 @@ public class ParkingTicket {
     }
 
     public String reportPoliceOfficer(String name, int badgeNumber) {
-        return "Police Officer info: " + name + " , " + badgeNumber;
+        return "Issuing ticket:\n\tOfficer: " + name + " , badge: " + badgeNumber;
     }
 }
