@@ -22,10 +22,10 @@ public class PoliceOfficer {
 
     public void issueTicket(ParkedCar car) {
         ParkingTicket ticket = new ParkingTicket();
-        ticket.reportParkedCar(car);
+        String carInfo = ticket.reportParkedCar(car);
         int fine = ticket.reportFine(car);
         String report = ticket.reportPoliceOfficer(this.name, this.badgeNumber);
-        System.out.println(report + " " + fine);
+        System.out.println(report + "\n" + carInfo +  "\n\tTotal fine: " + fine + "\n");
     }
 
     public String getName() {
