@@ -56,7 +56,8 @@ public class ParkedCar {
     }
 
     public long getTimeParked() {
-        timeParked = dateCreated.getTime() / 60000; // milliseconds to minutes
+        Date currentTime = new Date();
+        timeParked = (currentTime.getTime() /60000 ) - (dateCreated.getTime() / 60000); // milliseconds to minutes
         return timeParked;
     }
 
