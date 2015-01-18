@@ -1,4 +1,4 @@
-package studentrecords;
+package dnoguchi.studentrecords;
 
 public class Statistics {
     int [] lowscores = new int [5];

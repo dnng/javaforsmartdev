@@ -1,4 +1,4 @@
-package studentrecords;
+package dnoguchi.studentrecords;
 
 public class Student {
     private int SID;
