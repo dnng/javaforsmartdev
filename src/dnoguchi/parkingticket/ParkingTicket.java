@@ -2,9 +2,6 @@ package dnoguchi.parkingticket;
 
 import java.util.List;
 
-/**
- * Created by dnoguchi on 1/15/15.
- */
 public class ParkingTicket {
 
     public ParkingTicket() {

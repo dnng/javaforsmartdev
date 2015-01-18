@@ -18,29 +18,24 @@ public class Main {
          */
         select: {
             for(String program: programList) {
-                if (args[0].equals(program)) {
+                if (program.equals(args[0])) {
                     call(program);
                     break select;
                 }
             }
             System.out.println("Please specify a valid program name");
         }
-
-        /*
-         * Force parking call for testing purposes
-         */
-        Parking();
     }
 
     public static void call(String program) {
-        if (program.equals("coin")) {
-            Coin();
-        } else if (program.equals("parking")) {
-            Parking();
+        if ("coin".equals(program)) {
+            runCoin();
+        } else if ("parking".equals(program)) {
+            runParking();
         }
     }
 
-    public static void Coin() {
+    public static void runCoin() {
         Coin coin = new Coin();
         int headcount = 0;
 
@@ -48,7 +43,7 @@ public class Main {
 
         for (int i = 0; i < 20; i++) {
             coin.toss();
-            if (coin.getSideUp().equals("heads")) {
+            if ("heads".equals(coin.getSideUp())) {
                 headcount++;
             }
 
@@ -60,7 +55,7 @@ public class Main {
 
     }
 
-    public static void Parking() {
+    public static void runParking() {
         /*
          * 1) Create two parked cars
          * 2) Make the Police officer check both of them and issue one ticket
