@@ -1,5 +1,9 @@
 package dnoguchi.studentrecords;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Util {
     static Student [] readFile(String filename, Student [] stu) {
         //Reads the file and builds student array.
@@ -8,5 +12,22 @@ public class Util {
         //Tokenize each line using StringTokenizer Object
         //Each token is converted from String to Integer using parseInt method
         //Value is then saved in the right property of Student Object.
+
+        try {
+            FileReader file = new FileReader("ReadSource.java");
+            BufferedReader buff = new BufferedReader(file);
+            boolean eof = false;
+            while (!eof) {
+                String line = buff.readLine();
+                if (line == null)
+                    eof = true;
+                else
+                    System.out.println(line);
+            }
+
+            buff.close();
+        } catch (IOException e) {System.out.println("Error ­­ " + e.toString());
+        }
+
     }
 }

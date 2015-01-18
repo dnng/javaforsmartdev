@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> programList = Arrays.asList("coin", "parking");
+        List<String> programList = Arrays.asList("coin", "parking", "student");
 
         /*
          * Simulate for..else python loop
@@ -76,6 +76,19 @@ public class Main {
         }
 
         officer.examineParking(car1);
+    }
+
+    public static void runStudents() {
+        Student students [] = new Student[40];
+
+        //Populate the student array
+        students = Util.readFile("filename.txt", lab2);
+
+        Statistics statStudents = new Statistics();
+        statStudents.findlow(students);
+
+        //add calls to find high and find average
+        //Print the data and statistics
     }
 
 }
