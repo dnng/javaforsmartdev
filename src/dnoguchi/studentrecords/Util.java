@@ -26,7 +26,7 @@ public class Util {
             }
 
             buff.close();
-        } catch (IOException e) {System.out.println("Error ­­ " + e.toString());
+        } catch (IOException e) {System.out.println("Error -- " + e.toString());
         }
 
     }
