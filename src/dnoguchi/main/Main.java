@@ -3,6 +3,9 @@ package dnoguchi.main;
 import dnoguchi.cointoss.Coin;
 import dnoguchi.parkingticket.ParkedCar;
 import dnoguchi.parkingticket.PoliceOfficer;
+import dnoguchi.studentrecords.Statistics;
+import dnoguchi.studentrecords.Student;
+import dnoguchi.studentrecords.Util;
 
 import java.util.Arrays;
 import java.util.List;
@@ -82,7 +85,7 @@ public class Main {
         Student students [] = new Student[40];
 
         //Populate the student array
-        students = Util.readFile("filename.txt", lab2);
+        students = Util.readFile("filename.txt", students);
 
         Statistics statStudents = new Statistics();
         statStudents.findlow(students);
