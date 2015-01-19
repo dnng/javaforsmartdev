@@ -37,6 +37,8 @@ public class Main {
             runCoin();
         } else if ("parking".equals(program)) {
             runParking();
+        } else if ("student".equals(program)) {
+            runStudents();
         }
     }
 
