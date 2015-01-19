@@ -8,7 +8,7 @@ public class Statistics {
     List<Integer> highscores = new ArrayList<Integer>();
     List<Float> avgscores    = new ArrayList<Float>();
 
-    public List<Integer> findlow(Student[] students){
+    public List<Integer> findlow(ArrayList<Student> students){
         int currentScore = 9999;
         for (Student student: students) {
             for (int score: student.getScores()) {
