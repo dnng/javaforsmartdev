@@ -10,21 +10,22 @@ import java.util.StringTokenizer;
 public class Util {
     public static ArrayList<Student> readFile(String filename, ArrayList<Student> stu) throws upperRecordsLimitException {
         try {
-            FileReader file = new FileReader("src/dnoguchi/studentrecords/studentrecords.txt");
+            FileReader file = new FileReader(filename);
             BufferedReader buff = new BufferedReader(file);
             boolean eof = false;
 
             /* quick and dirty way to skip the first line */
             String line = buff.readLine();
+
+            /* dirty indexing of students array */
+            int i = 0;
+
             while (!eof) {
-
-                /* dirty indexing of students array */
-                int i = 0;
-
                 line = buff.readLine();
-                if (line == null)
+
+                if (line == null) {
                     eof = true;
-                else {
+                } else {
                     /*
                      * Learning new types and Interfaces in Java, clean this mess after playing! :-P
                      *
@@ -44,12 +45,12 @@ public class Util {
                     int [] bucket = new int[scores.size()];
                     Iterator<Integer> iterator = scores.iterator();
                     for (int idx = 0; idx < bucket.length; idx++) {
-                        bucket[i] = iterator.next().intValue();
+                        bucket[idx] = iterator.next().intValue();
                     }
                     student.setScores(bucket);
                     stu.add(student);
                 }
-                i++;
+                i += 1;
                 if (i > 40 ) {
                     throw new upperRecordsLimitException(i);
                 }
