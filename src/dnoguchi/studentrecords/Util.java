@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class Util {
     public static ArrayList<Student> readFile(String filename, ArrayList<Student> stu) throws upperRecordsLimitException {
         try {
-            FileReader file = new FileReader("studentrecords.txt");
+            FileReader file = new FileReader("src/dnoguchi/studentrecords/studentrecords.txt");
             BufferedReader buff = new BufferedReader(file);
             boolean eof = false;
 
