@@ -96,14 +96,23 @@ public class Main {
         }
 
         Statistics statStudents = new Statistics();
-        int lowScores[] = statStudents.findlow(students);
-        System.out.print("Low Score: ");
-        for (Integer score: lowScores) {
+        int scores[] = statStudents.findlow(students);
+        System.out.print("\nLow Score : ");
+        for (Integer score: scores) {
             System.out.print("\t" + score);
         }
 
-        //add calls to find high and find average
-        //Print the data and statistics
+        scores = statStudents.findHigh(students);
+        System.out.print("\nHigh Score: ");
+        for (Integer score: scores) {
+            System.out.print("\t" + score);
+        }
+
+        float avgScores[] = statStudents.findAvg(students);
+        System.out.print("\nAvg Score : ");
+        for (Float avg: avgScores) {
+            System.out.print("\t" + avg);
+        }
     }
 
 }
