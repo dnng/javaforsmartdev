@@ -1,14 +1,37 @@
 package dnoguchi.studentrecords;
 
-public class Statistics {
-    int [] lowscores   = new int [5];
-    int [] highscores  = new int [5];
-    float [] avgscores = new float [5];
+import java.util.ArrayList;
+import java.util.List;
 
-    public void findlow(Student[] students){
+public class Statistics {
+    List<Integer> lowscores  = new ArrayList<Integer>();
+    List<Integer> highscores = new ArrayList<Integer>();
+    List<Float> avgscores    = new ArrayList<Float>();
+
+    public List<Integer> findlow(Student[] students){
+        int currentScore = 9999;
+        for (Student student: students) {
+            for (int score: student.getScores()) {
+                if (score < currentScore) {
+                    currentScore = score;
+                }
+            }
+            lowscores.add(currentScore);
+        }
+        return lowscores;
     }
 
-    public void findhigh(Student [] students){
+    public List<Integer> findhigh(Student [] students){
+        int currentScore = 0;
+        for (Student student: students) {
+            for (int score: student.getScores()) {
+                if (score > currentScore) {
+                    currentScore = score;
+                }
+            }
+            highscores.add(currentScore);
+        }
+        return highscores;
     }
 
     public void findavg(Student [] students){
