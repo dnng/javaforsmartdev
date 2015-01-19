@@ -4,34 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Statistics {
-    List<Integer> lowscores  = new ArrayList<Integer>();
-    List<Integer> highscores = new ArrayList<Integer>();
-    List<Float> avgscores    = new ArrayList<Float>();
+    int lowScores[] = { 9999, 9999, 9999, 9999, 9999 };
+    int highScores[] = { 0, 0, 0, 0, 0 };
+    int avgScores[] = { 0, 0, 0, 0, 0 };
 
-    public List<Integer> findlow(ArrayList<Student> students){
-        int currentScore = 9999;
+    public int[] findlow(ArrayList<Student> students){
         for (Student student: students) {
-            for (int score: student.getScores()) {
-                if (score < currentScore) {
-                    currentScore = score;
+            int currentScore[] = student.getScores();
+            for (int i = 0; i < lowScores.length; i++) {
+                if (lowScores[i] > currentScore[i]) {
+                    lowScores[i] = currentScore[i];
                 }
             }
-            lowscores.add(currentScore);
         }
-        return lowscores;
+        return lowScores;
     }
 
-    public List<Integer> findhigh(Student [] students){
-        int currentScore = 0;
+    public int[] findhigh(Student [] students){
         for (Student student: students) {
-            for (int score: student.getScores()) {
-                if (score > currentScore) {
-                    currentScore = score;
+            int currentScore[] = student.getScores();
+            for (int i = 0; i < highScores.length; i++) {
+                if (highScores[i] > currentScore[i]) {
+                    highScores[i] = currentScore[i];
                 }
             }
-            highscores.add(currentScore);
         }
-        return highscores;
+        return highScores;
     }
 
     public void findavg(Student [] students){
