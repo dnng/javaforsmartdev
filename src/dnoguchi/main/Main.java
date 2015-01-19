@@ -91,27 +91,28 @@ public class Main {
         //Populate the student array
         try {
             students = Util.readFile("src/dnoguchi/studentrecords/studentrecords.txt", students);
+
+            Statistics statStudents = new Statistics();
+            int scores[] = statStudents.findlow(students);
+            System.out.print("\nLow Score : ");
+            for (Integer score: scores) {
+                System.out.print("\t" + score);
+            }
+
+            scores = statStudents.findHigh(students);
+            System.out.print("\nHigh Score: ");
+            for (Integer score: scores) {
+                System.out.print("\t" + score);
+            }
+
+            float avgScores[] = statStudents.findAvg(students);
+            System.out.print("\nAvg Score : ");
+            for (Float avg: avgScores) {
+                System.out.print("\t" + avg);
+            }
+
         } catch (upperRecordsLimitException e) {
             System.err.println("Records limit is: " + e.getUpperRecordsLimit());
-        }
-
-        Statistics statStudents = new Statistics();
-        int scores[] = statStudents.findlow(students);
-        System.out.print("\nLow Score : ");
-        for (Integer score: scores) {
-            System.out.print("\t" + score);
-        }
-
-        scores = statStudents.findHigh(students);
-        System.out.print("\nHigh Score: ");
-        for (Integer score: scores) {
-            System.out.print("\t" + score);
-        }
-
-        float avgScores[] = statStudents.findAvg(students);
-        System.out.print("\nAvg Score : ");
-        for (Float avg: avgScores) {
-            System.out.print("\t" + avg);
         }
     }
 
