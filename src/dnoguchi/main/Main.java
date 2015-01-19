@@ -7,6 +7,7 @@ import dnoguchi.studentrecords.Statistics;
 import dnoguchi.studentrecords.Student;
 import dnoguchi.studentrecords.Util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -82,7 +83,7 @@ public class Main {
     }
 
     public static void runStudents() {
-        Student students [] = new Student[40];
+        ArrayList<Student> students = new ArrayList<Student>();
 
         //Populate the student array
         students = Util.readFile("filename.txt", students);
