@@ -6,6 +6,7 @@ import dnoguchi.parkingticket.PoliceOfficer;
 import dnoguchi.studentrecords.Statistics;
 import dnoguchi.studentrecords.Student;
 import dnoguchi.studentrecords.Util;
+import dnoguchi.studentrecords.upperRecordsLimitException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -86,10 +87,18 @@ public class Main {
         ArrayList<Student> students = new ArrayList<Student>();
 
         //Populate the student array
-        students = Util.readFile("filename.txt", students);
+        try {
+            students = Util.readFile("filename.txt", students);
+        } catch (upperRecordsLimitException e) {
+            System.err.println("Records limit is: " + e.getUpperRecordsLimit());
+        }
 
         Statistics statStudents = new Statistics();
-        statStudents.findlow(students);
+        List<Integer> lowScores = statStudents.findlow(students);
+        System.out.print("Low Score: ");
+        for (Integer score: lowScores) {
+            System.out.print("\t" + score);
+        }
 
         //add calls to find high and find average
         //Print the data and statistics
