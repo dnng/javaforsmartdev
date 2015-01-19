@@ -90,13 +90,13 @@ public class Main {
 
         //Populate the student array
         try {
-            students = Util.readFile("filename.txt", students);
+            students = Util.readFile("src/dnoguchi/studentrecords/studentrecords.txt", students);
         } catch (upperRecordsLimitException e) {
             System.err.println("Records limit is: " + e.getUpperRecordsLimit());
         }
 
         Statistics statStudents = new Statistics();
-        List<Integer> lowScores = statStudents.findlow(students);
+        int lowScores[] = statStudents.findlow(students);
         System.out.print("Low Score: ");
         for (Integer score: lowScores) {
             System.out.print("\t" + score);
