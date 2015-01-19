@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.StringTokenizer;
 
 public class Util {
-    public static ArrayList<Student> readFile(String filename, ArrayList<Student> stu) {
+    public static ArrayList<Student> readFile(String filename, ArrayList<Student> stu) throws upperRecordsLimitException {
         try {
             FileReader file = new FileReader("studentrecords.txt");
             BufferedReader buff = new BufferedReader(file);
@@ -32,7 +32,8 @@ public class Util {
                      */
                     StringTokenizer st = new StringTokenizer(line, " ");
                     String token = st.nextToken();
-                    stu.get(i).setSID(Integer.parseInt(token));
+                    Student student = new Student();
+                    student.setSID(Integer.parseInt(token));
 
                     ArrayList<Integer> scores = new ArrayList<Integer>();
 
@@ -45,14 +46,18 @@ public class Util {
                     for (int idx = 0; idx < bucket.length; idx++) {
                         bucket[i] = iterator.next().intValue();
                     }
-                    stu.get(i).setScores(bucket);
+                    student.setScores(bucket);
+                    stu.add(student);
                 }
                 i++;
+                if (i > 40 ) {
+                    throw new upperRecordsLimitException(i);
+                }
             }
             buff.close();
         } catch (IOException e) {
             System.out.println("Error -- " + e.toString());
         }
-
+        return stu;
     }
 }
